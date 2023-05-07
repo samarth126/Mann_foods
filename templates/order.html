@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+<body>
+    <br>
+    <br>
+    <br>
+   
+    <!-- Start Menu -->
+    <div class="menu-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="heading-title text-center">
+                        <h2>Distributer Dashboard</h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row inner-menu-box">
+                <div class="col-3">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+                            aria-controls="v-pills-home" aria-selected="true">My profile</a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+                            aria-controls="v-pills-profile" aria-selected="false">Order</a>
+                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+                            aria-controls="v-pills-messages" aria-selected="false">Past Orders</a>
+                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
+                            aria-controls="v-pills-settings" aria-selected="false">Raise A query</a>
+                    </div>
+                </div>
+    
+                <div class="col-9">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                            aria-labelledby="v-pills-home-tab">
+                            <h1>
+                                data
+                            </h1>
+                           
+    
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                            aria-labelledby="v-pills-profile-tab">
+                            <div class="container mt-6">
+                                <table id="product-table" class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Quantity</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <select class="form-control product-select" style="width: 100px;">
+                                                    {% for product in products %}
+                                                    <option value="{{ product.id }}">{{ product.product_name }}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="number" class="form-control quantity-input" style="width: 150px;" value="1">
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-danger remove-row">Remove</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            
+                                <button id="add-row" class="btn btn-primary">Add Row</button>
+                                <button id="submit-btn" class="btn btn-success">Submit</button>
+                            </div>
+    
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                            aria-labelledby="v-pills-messages-tab">
+                            <h1>data of dalia</h1>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                            aria-labelledby="v-pills-settings-tab">
+                           <h1>data of Namkeen</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    <!-- End Menu -->
+  
+   
+
+    {% csrf_token %}
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+
+
+
+    $(document).ready(function () {
+        $("#add-row").click(function () {
+            var row = $("<tr></tr>");
+            var productCell = $("<td></td>");
+            var select = $("<select class='form-control product-select' style='width: 100px;'></select>");
+            {% for product in products %}
+            var option = $("<option value='{{ product.id }}'>{{ product.product_name }}</option>");
+            select.append(option);
+            {% endfor %}
+            productCell.append(select);
+
+            var quantityCell = $("<td></td>");
+            var quantityInput = $("<input type='number' class='form-control quantity-input' value='0'>");
+            quantityCell.append(quantityInput);
+
+            var removeCell = $("<td></td>");
+            var removeButton = $("<button class='btn btn-danger remove-row'>Remove</button>");
+            removeCell.append(removeButton);
+
+            row.append(productCell);
+            row.append(quantityCell);
+            row.append(removeCell);
+
+            $("#product-table tbody").append(row);
+        });
+
+        $("#submit-btn").click(function () {
+            var products = [];
+            $("#product-table tbody tr").each(function () {
+                var product = {
+                    "id": $(this).find(".product-select").val(),
+                    "name": $(this).find(".product-select option:selected").text(),
+                    "quantity": $(this).find(".quantity-input").val()
+                };
+                products.push(product);
+            });
+            
+          
+            
+            
+
+            var csrf_token = document.querySelector('[name=csrfmiddlewaretoken]').value;
+            var arr = { data: products}
+        
+           
+            $.ajax({
+                type: "POST",
+                url: "{% url 'place_order' %}",
+                headers: { 'X-CSRFToken': csrf_token },
+                data: JSON.stringify(arr),
+                    
+                dataType: 'json',
+                
+                contentType: "application/json",
+                
+               
+               
+              
+                success: function (response) {
+                    alert("Order Placed Successfully");
+                },
+                error: function (xhr, status, error) {
+                    alert(xhr.responseText);
+                },
+                cache: false,
+                processData: false,
+                contentType: false,
+            });
+        });
+
+        $(document).on("click", ".remove-row", function () {
+            $(this).closest("tr").remove();
+        });
+    });
+</script>
+
+
+{% endblock content %}

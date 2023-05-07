@@ -5,14 +5,32 @@ from django.contrib.auth.models import User
 
 #distributor profile
 class User_distributor(models.Model):
-    user=models.OneToOneField(User, on_delete=models.CASCADE)
+    user= models.OneToOneField(User, on_delete=models.CASCADE)
     user_companyname=models.CharField(max_length=150, blank=False)
     user_mobile=models.CharField(max_length=12,blank=False)
     user_address=models.CharField(max_length=200, blank=False)
     user_created_at=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.user_name
+        return self.user.username
+    
+
+class Product(models.Model):
+
+    product_name = models.CharField(max_length=255)
+    product_description = models.TextField()
+    product_price = models.DecimalField(max_digits=8, decimal_places=2)
+
+
+class Order(models.Model):
+    distributor_name = models.ForeignKey(User_distributor, on_delete=models.CASCADE)
+    order_date = models.DateField(auto_now=True)
+
+
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField()
 
 
 # Apply for distributer form
