@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en"><!-- Basic -->
+<html lang="en">
+<!-- Basic -->
+
 <head>
 	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
-   
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-     <!-- Site Metas -->
-    <title>Maan Foods</title>  
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Site Icons -->
-    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{% static 'images/logo.png' %}">
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">    
+	<!-- Site Metas -->
+	<title>Maan Foods</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Site Icons -->
+	<link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+	<link rel="apple-touch-icon" href="{% static 'images/logo.png' %}">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 	<!-- Site CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<!-- Responsive CSS -->
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
-    <!--[if lt IE 9]>
+	<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -40,10 +42,11 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
 				<a class="navbar-brand" href="index.html">
-					<img src="{% static 'images/logo.png' %}" alt="" />
+					<img src="{% static 'images/logo.jpg' %}" height="60px" width="60px" alt="" />
 				</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-				  <span class="navbar-toggler-icon"></span>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food"
+					aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
@@ -51,7 +54,8 @@
 						<li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a"
+								data-toggle="dropdown">Pages</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
 								<a class="dropdown-item" href="reservation.html">Reservation</a>
 								<a class="dropdown-item" href="stuff.html">Stuff</a>
@@ -71,14 +75,14 @@
 			</div>
 		</nav>
 	</header>
-<!-- End header -->
+	<!-- End header -->
 
 
-{% block content %}
+	{% block content %}
 
 
 
-{% endblock %}
+	{% endblock %}
 
 
-{% include 'footer.html' %}
+	{% include 'footer.html' %}
