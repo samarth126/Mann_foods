@@ -5,13 +5,31 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 import json
+from .models import *
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html',{})
+    ctgs=categorie.objects.all()
+    galls=gallery.objects.all()
+    print(ctgs)
+    context={'ctgs':ctgs,'galls':galls}
+    return render(request, 'index.html',context)
+
+def categories(request):
+    ctgs=categorie.objects.all()
+    context={'ctgs':ctgs}
+    return render(request, 'categories.html',context)
+
+def products(request, slug=None):
+    # blogs=Blogs.objects.all()
+    pros=Product.objects.filter(categorie_prod=slug)
+    context={'pros':pros}
+    return render(request, 'products.html',context)
 
 def blogs(request):
-    return render(request, 'blog.html',{})
+    blogs=Blogs.objects.all()
+    context={'blogs':blogs}
+    return render(request, 'blog.html',context)
 
 def blog_detail(request):
     return render(request, 'blog-details.html',{})

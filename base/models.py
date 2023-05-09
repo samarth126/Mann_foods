@@ -13,13 +13,29 @@ class User_distributor(models.Model):
 
     def __str__(self):
         return self.user.username
-    
+
+class gallery(models.Model):
+    gal_img=models.ImageField(upload_to='gall/')
+
+
+
+class categorie(models.Model):
+    catg_img=models.ImageField(upload_to='catg/', default="eye.jpg")
+    category_name=models.CharField(max_length=200)
+    categorie_des=models.TextField()
+
+    def __str__(self):
+        return self.category_name 
 
 class Product(models.Model):
-
+    prod_img=models.ImageField(upload_to='prod/', default="eye.jpg")
+    categorie_prod=models.ForeignKey(categorie,  on_delete=models.CASCADE)
     product_name = models.CharField(max_length=255)
     product_description = models.TextField()
     product_price = models.DecimalField(max_digits=8, decimal_places=2)
+
+    def __str__(self):
+        return self.product_name
 
 
 class Order(models.Model):

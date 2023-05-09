@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<!-- Start Stuff -->
+<br>
+<br>
+<br>
+<div class="stuff-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="heading-title text-center">
+                    <h2>Categories</h2>
+                    <p>Please select the categorey of the food you are looking for</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for ctg in ctgs %}
+            <div class="col-md-4 col-sm-6">
+                <div class="our-team">
+                    <a class="lightbox" href="{% url 'products' slug=ctg.id  %}">
+                    <div class="pic">
+                        <img src="{{ ctg.catg_img.url }}">
+                    </div>
+                    <div class="team-content">
+                        <h3 class="title">{{ ctg.category_name }}</h3>
+                        <span class="post">Web Developer</span>
+                    </div>
+                </a>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+<!-- End Stuff -->
+
+{% endblock content %}

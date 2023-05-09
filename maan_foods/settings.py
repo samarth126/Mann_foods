@@ -81,15 +81,16 @@ DATABASES = {
     }
 }
 
-#static and media
-
+#static config
 STATIC_URL = '/static/'
-# MEDIA_ROOT = '/media/'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+# media config
+# Added Manually
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
