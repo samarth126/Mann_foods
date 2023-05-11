@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Product, Order, OrderItem, User_distributor
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from django.contrib.auth import authenticate, login
 import json
 from .models import *
 # Create your views here.
@@ -34,8 +35,41 @@ def blogs(request):
 def blog_detail(request):
     return render(request, 'blog-details.html',{})
 
+#view to signup distributer
+def signup_distributor(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        company_name = request.POST['user_companyname']
+        mobile = request.POST['user_mobile']
+        address = request.POST['user_address']
 
-@login_required
+        user = User.objects.create_user(username=username, password=password)
+        distributor = User_distributor(
+            user=user, user_companyname=company_name, user_mobile=mobile, user_address=address)
+        distributor.save()
+
+        # Redirect to the desired page after successful signup
+        return HttpResponse("successfully created")
+
+    return render(request, 'signup.html')
+
+
+def login_distributor(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            # Redirect to the distributor's dashboard or desired page after login
+            return redirect('order')
+
+    return render(request, 'login.html')
+
+
+
 def order(request):
     products = Product.objects.all()
 

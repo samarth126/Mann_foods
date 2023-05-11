@@ -8,7 +8,23 @@ admin.site.register(Distributor_Applicants)
 admin.site.register(Blogs)
 admin.site.register(gallery)
 
-admin.site.register(Product)
-admin.site.register(Order)
-admin.site.register(OrderItem)
+
+
+
 admin.site.register(categorie)
+
+
+class OrderItemInline(admin.TabularInline):
+    model = OrderItem
+    extra = 0  # Set the number of empty forms to display (0 for none)
+
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    inlines = [OrderItemInline]
+    # actions = [generate_pdf]

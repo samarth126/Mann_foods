@@ -167,10 +167,10 @@
                
               
                 success: function (response) {
-                    alert("Order Placed Successfully");
+                    alert(response);
                 },
                 error: function (xhr, status, error) {
-                    alert(xhr.responseText);
+                    console.log(xhr.responseText);
                 },
                 cache: false,
                 processData: false,
