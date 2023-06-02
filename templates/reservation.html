@@ -11,7 +11,7 @@
 		<div class="container text-center">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1>Reservation</h1>
+					<h1>Registor to be a Distributor</h1>
 				</div>
 			</div>
 		</div>
@@ -24,171 +24,318 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Reservation</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+						<h2>Regester</h2>
+						<p>good work</p>
 					</div>
 				</div>
 			</div>
+
 			<div class="row">
 				<div class="col-lg-12 col-sm-12 col-xs-12">
 					<div class="contact-block">
-						<form id="contactForm">
+						<form method="post">
+							{% csrf_token %}
+							<div class="text-center"><h3>Desired Area For Agency</h3></div>
+					
 							<div class="row">
 								<div class="col-md-6">
-									<h3>Book a table</h3>
+
 									<div class="col-md-12">
 										<div class="form-group">
-											<input id="input_date" class="datepicker picker__input form-control" name="date" type="text" value="" equired data-error="Please enter Date">
+											<input  class="form-control" name="applicant_state_name" type="text" placeholder="State Name">
 											<div class="help-block with-errors"></div>
 										</div>                                 
 									</div>
+									
 									<div class="col-md-12">
 										<div class="form-group">
-											<input id="input_time" class="time form-control picker__input" required data-error="Please enter time">
+											<input  class="form-control" name="applicant_district_name" placeholder="District Name">
 											<div class="help-block with-errors"></div>
 										</div>                                 
 									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<select class="custom-select d-block form-control" id="person" required data-error="Please select Person">
-											  <option disabled selected>Select Person*</option>
-											  <option value="1">1</option>
-											  <option value="2">2</option>
-											  <option value="3">3</option>
-											  <option value="4">4</option>
-											  <option value="5">5</option>
-											  <option value="6">6</option>
-											  <option value="7">7</option>
-											</select>
-											<div class="help-block with-errors"></div>
-										</div> 
-									</div>
+									
+
 								</div>
+
 								<div class="col-md-6">
-									<h3>Contact Details</h3>
+									
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
+											<input  class="form-control" name="applicant_tulka" placeholder="Tulka">
 											<div class="help-block with-errors"></div>
 										</div>                                 
 									</div>
+
+								</div>
+					
+							</div>  
+							
+							<div class="text-center"><h3>Personal Info</h3></div>
+				
+							<div class="row">
+								<div class="col-md-6">
+
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" placeholder="Your Email" id="email" class="form-control" name="email" required data-error="Please enter your email">
+											<input  class="form-control" name="personal_name" type="text" placeholder="Name">
 											<div class="help-block with-errors"></div>
-										</div> 
+										</div>                                 
 									</div>
+									
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" placeholder="Your Numbar" id="phone" class="form-control" name="phone" required data-error="Please enter your Numbar">
+											<input  class="form-control" name="personal_age" type="age" placeholder="Age">
 											<div class="help-block with-errors"></div>
-										</div> 
+										</div>                                 
+									</div>
+
+									<div class="col-md-12">
+										<div class="form-group">
+											<input  class="form-control" name="personal_address" type="address" placeholder="Address">
+											<div class="help-block with-errors"></div>
+										</div>                                 
+									</div>
+
+									<div class="col-md-12">
+										<div class="form-group">
+											<input  class="form-control" name="personal_pincode" type="text" placeholder="Pincode">
+											<div class="help-block with-errors"></div>
+										</div>                                 
+									</div>
+
+									<div class="col-md-12">
+										<div class="form-group">
+											<input  class="form-control" name="personal_companyname" type="text" placeholder="Company Name">
+											<div class="help-block with-errors"></div>
+										</div>                                 
+									</div>
+									
+
+								</div>
+							
+								<div class="col-md-6">
+									
+									<div class="col-md-12">
+										<div class="form-group">
+											<input  class="form-control" name="personal_mobile" placeholder="Mobile" type="phone">
+											<div class="help-block with-errors"></div>
+										</div>                                 
+									</div>
+
+									<div class="col-md-12">
+										<div class="form-group">
+											<input  class="form-control" name="personal_alt_mobile" placeholder="Alternate Mobile" type="phone">
+											<div class="help-block with-errors"></div>
+										</div>                                 
+									</div>
+									
+									<div class="col-md-12">
+										<div class="form-group">
+											<input  class="form-control" name="personal_telephone" type="tel" placeholder="Telephone no.">
+											<div class="help-block with-errors"></div>
+										</div>                                 
+									</div>
+									
+									<div class="col-md-12">
+										<div class="form-group">
+											<input  class="form-control" name="personal_email" type="email" placeholder="Email">
+											<div class="help-block with-errors"></div>
+										</div>                                 
+									</div>
+
+									<div class="col-md-12">
+										<div class="form-group">
+											<input  class="form-control" name="personal_educational_details" type="text" placeholder="Educational Details">
+											<div class="help-block with-errors"></div>
+										</div>                                 
+									</div>
+
+								</div>
+								
+
+							</div> 
+
+
+							<div class="text-center"><h3>Partner Info</h3></div>
+					
+							<div class="row">
+								<div class="col-md-6">
+
+									<div class="col-md-12">
+										<div class="form-group">
+											<input class="form-control" name="partner_name" type="text" placeholder="Partner Name">
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+							
+									<div class="col-md-12">
+										<div class="form-group">
+											<input class="form-control" name="partner_address" type="text" placeholder="Partner Address">
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+							
+									<div class="col-md-12">
+										<div class="form-group">
+											<input class="form-control" name="partner_pincode" type="text" placeholder="Partner Pincode">
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+							
+									<div class="col-md-12">
+										<div class="form-group">
+											<input class="form-control" name="partner_mobile" placeholder="Partner Mobile" type="tel">
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>		
+
+								</div>
+							
+								<div class="col-md-6">
+									
+									<div class="col-md-12">
+										<div class="form-group">
+											<input class="form-control" name="partner_alt_mobile" placeholder="Partner Alternate Mobile" type="tel">
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+							
+									<div class="col-md-12">
+										<div class="form-group">
+											<input class="form-control" name="partner_telephone" type="tel" placeholder="Partner Telephone">
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+							
+									<div class="col-md-12">
+										<div class="form-group">
+											<input class="form-control" name="partner_email" type="email" placeholder="Partner Email">
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+
+								</div>
+								
+
+							</div> 
+
+							<div class="text-center"><h3>Other Info</h3></div>
+					
+							<div class="row">
+								<div class="col-md-6">
+
+									<div class="col-md-12">
+										<div class="col-md-12">
+											<div class="form-group">
+											  <label>Do you have storage Facility ?</label><br>
+											  <input type="radio" name="storage_option" value="yes" onclick="toggleStorageField(true)">
+											  <label>Yes</label>
+											  <input type="radio" name="storage_option" value="no" onclick="toggleStorageField(false)">
+											  <label>No</label>
+											  <div class="help-block with-errors"></div>
+											</div>
+										  </div>
+										  
+										  <div class="col-md-12" id="storageField" style="display: none;">
+											<div class="form-group">
+											  <input class="form-control" name="applicant_storage_info" type="number" placeholder="Amount of Storage in square feet">
+											  <div class="help-block with-errors"></div>
+											</div>
+										  </div>
+									</div>
+
+									<script>
+										function toggleStorageField(showField) {
+									var storageField = document.getElementById("storageField");
+									if (showField) {
+										storageField.style.display = "block";
+									} else {
+										storageField.style.display = "none";
+									}
+									}
+									</script>
+
+
+							<div class="col-md-12">
+								<div class="col-md-12">
+									<div class="form-group">
+									<label>Do you have Transportation facility  ?</label><br>
+									<input type="radio" name="transport_option" value="yes" onclick="toggleStorageField1(true)">
+									<label>Yes</label>
+									<input type="radio" name="transport_option" value="no" onclick="toggleStorageField1(false)">
+									<label>No</label>
+									<div class="help-block with-errors"></div>
 									</div>
 								</div>
+								
+								<div class="col-md-12" id="storageField1" style="display: none;">
+									<div class="form-group">
+									<input class="form-control" name="applicant_transport_info" type="text" placeholder="Enter details of vehichle">
+									<div class="help-block with-errors"></div>
+									</div>
+								</div>
+							</div>
+
+							<script>
+							function toggleStorageField1(showField) {
+							var storageField = document.getElementById("storageField1");
+							if (showField) {
+							storageField.style.display = "block";
+							} else {
+							storageField.style.display = "none";
+							}
+							}
+							</script>
+
+									
+									
+
+								</div>
+
+								<div class="col-md-6">
+
+									<div class="col-md-12">
+										<div class="form-group">
+										  <label>What is your investment capacity?</label><br>
+										  <input type="radio" name="applicant_invesment_capacity" value="below_5_lakh">
+										  <label>Below 5 lakh</label><br>
+										  <input type="radio" name="applicant_invesment_capacity" value="more_than_5_lakh">
+										  <label>More than 5 lakh</label><br>
+										  <input type="radio" name="applicant_invesment_capacity" value="more_than_15_lakh">
+										  <label>More than 15 lakh</label><br>
+										</div>
+									  </div>
+									
+									  <div class="col-md-12">
+										<div class="form-group">
+										  <label>Other Experience Details</label>
+										  <textarea class="form-control" name="applicant_experience" placeholder="Enter other experience details"></textarea>
+										  <div class="help-block with-errors"></div>
+										</div>
+									  </div>
+
+								</div>
+								
+
 								<div class="col-md-12">
 									<div class="submit-button text-center">
-										<button class="btn btn-common" id="submit" type="submit">Book Table</button>
+										<button class="btn btn-common" type="submit">Registor to be a Distributor</button>
 										<div id="msgSubmit" class="h3 text-center hidden"></div> 
 										<div class="clearfix"></div> 
 									</div>
 								</div>
-							</div>            
+							
+							</div> 
+
 						</form>
 					</div>
 				</div>
 			</div>
+
+
 		</div>
 	</div>
 	<!-- End Reservation -->
 	
-	<!-- Start Customer Reviews -->
-	<div class="customer-reviews-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="heading-title text-center">
-						<h2>Customer Reviews</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-8 mr-auto ml-auto text-center">
-					<div id="reviews" class="carousel slide" data-ride="carousel">
-						<div class="carousel-inner mt-4">
-							<div class="carousel-item text-center active">
-								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/quotations-button.png" alt="">
-								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Paul Mitchel</strong></h5>
-								<h6 class="text-dark m-0">Web Developer</h6>
-								<p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
-							</div>
-							<div class="carousel-item text-center">
-								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/quotations-button.png" alt="">
-								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Steve Fonsi</strong></h5>
-								<h6 class="text-dark m-0">Web Designer</h6>
-								<p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
-							</div>
-							<div class="carousel-item text-center">
-								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/quotations-button.png" alt="">
-								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Daniel vebar</strong></h5>
-								<h6 class="text-dark m-0">Seo Analyst</h6>
-								<p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
-							</div>
-						</div>
-						<a class="carousel-control-prev" href="#reviews" role="button" data-slide="prev">
-							<i class="fa fa-angle-left" aria-hidden="true"></i>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a class="carousel-control-next" href="#reviews" role="button" data-slide="next">
-							<i class="fa fa-angle-right" aria-hidden="true"></i>
-							<span class="sr-only">Next</span>
-						</a>
-                    </div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Customer Reviews -->
 	
-	<!-- Start Contact info -->
-	<div class="contact-imfo-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 arrow-right">
-					<i class="fa fa-volume-control-phone"></i>
-					<div class="overflow-hidden">
-						<h4>Phone</h4>
-						<p class="lead">
-							+01 123-456-4590
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4 arrow-right">
-					<i class="fa fa-envelope"></i>
-					<div class="overflow-hidden">
-						<h4>Email</h4>
-						<p class="lead">
-							yourmail@gmail.com
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<i class="fa fa-map-marker"></i>
-					<div class="overflow-hidden">
-						<h4>Location</h4>
-						<p class="lead">
-							800, Lorem Street, US
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Contact info -->
 	{% endblock content %}

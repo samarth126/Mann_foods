@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <h1>Ticket List</h1>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Open Tickets</h2>
+            {% for ticket in tickets %}
+                {% if ticket.closed == False %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Ticket ID: {{ ticket.id }}</h5>
+                            <p class="card-text">Subject: {{ ticket.subject }}</p>
+                            <p class="card-text">Created By: {{ ticket.created_by }}</p>
+                            <p class="card-text">Created At: {{ ticket.created_at }}</p>
+                            <a href="{% url 'close_ticket' ticket_id=ticket.id %}" class="btn btn-primary">Close Ticket</a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="col-md-6">
+            <h2>Closed Tickets</h2>
+            {% for ticket in tickets %}
+                {% if ticket.closed == True %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Ticket ID: {{ ticket.id }}</h5>
+                            <p class="card-text">Subject: {{ ticket.subject }}</p>
+                            <p class="card-text">Created By: {{ ticket.created_by }}</p>
+                            <p class="card-text">Created At: {{ ticket.created_at }}</p>
+                            <p class="card-text text-muted">Closed At: {{ ticket.closed_at }}</p>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+{% endblock %}

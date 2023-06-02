@@ -13,6 +13,19 @@ class User_distributor(models.Model):
 
     def __str__(self):
         return self.user.username
+    
+#create a model to raise a ticket
+class Ticket(models.Model):
+    user_distributor = models.ForeignKey(User_distributor, on_delete=models.CASCADE)
+    subject = models.CharField(max_length=200)
+    description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    closed = models.BooleanField(default=False)
+    closed_at = models.DateTimeField(blank=True, null=True)
+
+    def __str__(self):
+        return self.subject
+
 
 class gallery(models.Model):
     gal_img=models.ImageField(upload_to='gall/')
@@ -41,6 +54,7 @@ class Product(models.Model):
 class Order(models.Model):
     distributor_name = models.ForeignKey(User_distributor, on_delete=models.CASCADE)
     order_date = models.DateField(auto_now=True)
+    order_closed = models.BooleanField(default=False)
 
 
 class OrderItem(models.Model):
@@ -78,9 +92,7 @@ class Distributor_Applicants(models.Model):
     
     #other info
     applicant_experience=models.TextField()
-    applicant_storage_check=models.BooleanField()
-    applicant_storage_info=models.IntegerField(null=True,blank=True)
-    applicant_transport_check=models.BooleanField()
+    applicant_storage_info=models.CharField(max_length=200,blank=True,null=True)
     applicant_transport_info=models.CharField(max_length=200,blank=True)
     applicant_invesment_capacity=models.CharField(max_length=200)
     
