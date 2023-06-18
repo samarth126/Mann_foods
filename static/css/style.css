@@ -162,7 +162,7 @@ button:focus{
 }
 
 .top-navbar .navbar{
-	padding: 15px 0px;
+	padding: 10px 0px;
 	position: fixed;
 	width: 100%;
 	border-radius: 0px 0px 100px 100px;
@@ -183,12 +183,13 @@ button:focus{
 }
 
 .top-navbar .navbar-light .navbar-nav .nav-item .nav-link:hover{
-	background: #d65106;
-	color: #ffffff;
+	
+	color: #d65106;
+ 
 }
 .top-navbar .navbar-light .navbar-nav .nav-item.active .nav-link{
-	background: #d65106;
-	color: #ffffff;
+	
+	color: #d65106;
 	border-radius: 4px;
 }
 
@@ -204,11 +205,11 @@ button:focus{
 }
 
 .navbar-expand-lg .navbar-nav .dropdown-menu a.dropdown-item:hover{
-	background: #d65106;
-	color: #ffffff;
+	
+	color: #d65106;
 }
 .navbar-light .navbar-toggler:hover{
-	background: #d65106;
+	
 }
 
 /*------------------------------------------------------------------
@@ -286,7 +287,7 @@ button:focus{
 }
 
 .overlay-background {
-    background: #333;
+    /* background: #333; */
     position: absolute;
     height: 100%;
     width: 100%;
@@ -317,14 +318,36 @@ button:focus{
     About
 -------------------------------------------------------------------*/
 
+#rotating_img:hover{
+    
+            width: auto;
+            animation: rotation 10s infinite linear;
+          
+       
+    
+      
+}
+  @keyframes rotation {
+      from {
+          transform: rotate(0deg);
+      }
+
+      to {
+          transform: rotate(360deg);
+      }
+  }
+
+
+
+
 .about-section-box{
 	padding: 70px 0px;
 	background: #ffffff url(../images/about-bg.jpg) no-repeat bottom center;
 	background-size: cover;
 }
-.about-section-box .img-fluid{
-	box-shadow: 20px 20px 0px #d65106;
-}
+/* .about-section-box .img-fluid{
+	box-shadow: 20px 20px 0px #a30a36;
+} */
 .inner-column{
 	text-align: left;
 }
@@ -620,7 +643,7 @@ button:focus{
 	padding-bottom: 0px;
 }
 .bg-f{
-	background-image: url("../images/footer-bg.jpg");
+	/* background-image: url("../images/new_footer.jpg"); */
 	background-attachment: scroll;
 	background-clip: initial;
 	background-color: rgba(0, 0, 0, 0);
@@ -701,6 +724,9 @@ button:focus{
     text-align: center;
     padding: 5px 0;
 }
+.quick-links{
+    color: #fff;
+}
 
 .subscribe_form .form_input {
     display: block;
@@ -752,12 +778,12 @@ button:focus{
 }
 
 .copyright{
-	margin-top: 20px;
+	margin-top: 7px;
 	position: relative;
 	display: block;
-	background-color: #010101;
-	border-top: 1px solid rgba(207, 166, 113);
-	padding: 30px 0;
+	background-color: rgb(163, 10, 54);
+	border-top: 1px solid black;
+	padding: 10px 0;
 	z-index: 1;
 }
 

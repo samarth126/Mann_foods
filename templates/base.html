@@ -28,11 +28,11 @@
 	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-	<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
 
 </head>
 
@@ -42,7 +42,7 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
 				<a class="navbar-brand" href="{% url 'index' %}">
-					<img src="{% static 'images/logo.jpg' %}" height="60px" width="60px" alt="" />
+					<img src="{% static 'images/logo.png' %}" height="70px" width="70px" alt="" />
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food"
 					aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,18 +50,23 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="{% url 'categories' %}">Products</a></li>
-						{% if  request.user.is_authenticated %}
-						<li class="nav-item"><a class="nav-link" href="{% url 'order' %}">Dashboard</a></li>
-						{% endif %}
+						
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Products</a>
+								<div class="dropdown-menu" aria-labelledby="dropdown-a">
+									<a class="dropdown-item" href="products">All Products</a>
+									<a class="dropdown-item" href="{% url 'categories' %}">Categories</a>
+								</div>
+							</li>
+						
+						
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a"
-								data-toggle="dropdown">Pages</a>
+								data-toggle="dropdown">Become a Distributor</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
 								<a class="dropdown-item" href="{% url 'distributor_reg' %}">Regisration</a>
-								<a class="dropdown-item" href="stuff.html">Stuff</a>
-								<a class="dropdown-item" href="gallery.html">Gallery</a>
+								<!-- <a class="dropdown-item" href="stuff.html">Stuff</a>
+								<a class="dropdown-item" href="gallery.html">Gallery</a> -->
 							</div>
 						</li>
 						<li class="nav-item dropdown">
@@ -71,10 +76,20 @@
 							</div>
 						</li>
 						{% if  request.user.is_authenticated %}
-						<li class="nav-item"><a href="{% url 'logout' %}" class="nav-item nav-link ">Logout</a></li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">{{request.user}} <i class="fa-regular fa-circle-user"></i></a>
+								<div class="dropdown-menu" aria-labelledby="dropdown-a">
+									<a class="nav-link" href="{% url 'order' %}">Dashboard</a>
+									<a href="{% url 'logout' %}" class="nav-item nav-link ">Logout</a>
+								</div>
+							</li>
+						
 						{% else %}
-						<li class="nav-item"><a href="{% url 'login' %}" class="nav-item nav-link ">Login</a></li>
+						<li class="nav-item"><a href="{% url 'login' %}" class="nav-item nav-link "><i class="fa-regular fa-circle-user"></i></a></li>
 						{% endif %}
+					<li class="nav-item"><a href="#" class="nav-item nav-link ">OFFERS <i class="fa-solid fa-percent"></i></a>
+
+					</li>
 					</ul>
 				</div>
 			</div>

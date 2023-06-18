@@ -61,7 +61,7 @@
                                         <tr>
                                             <th>Product</th>
                                             <th>Quantity</th>
-                                            <th></th>
+                                            <th>Unit</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -75,6 +75,12 @@
                                             </td>
                                             <td>
                                                 <input type="number" class="form-control quantity-input" style="width: 150px;" value="1">
+                                            </td>
+                                            <td>
+                                              <select class="form-control unit-select" style="width: 100px;">
+                                                <option value="Bag">Bag</option>
+                                                <option value="Gram">Gram</option>
+                                                 <option value="Kg">Kg</option>
                                             </td>
                                             <td>
                                                 <button class="btn btn-danger remove-row">Remove</button>
@@ -208,6 +214,17 @@
             select.append(option);
             {% endfor %}
             productCell.append(select);
+            var unitCell=$("<td></td>");
+            var unit = $("<select class='form-control unit-select' style='width: 100px;'></select>");
+
+            var unit_option = $("<option value='Bag'>Bag</option>");
+            unit.append(unit_option);
+            var unit_option = $("<option value='Gram'>Gram</option>");
+            unit.append(unit_option);
+            var unit_option = $("<option value='Kg'>Kg</option>");
+            unit.append(unit_option);
+            unitCell.append(unit);
+
 
             var quantityCell = $("<td></td>");
             var quantityInput = $("<input type='number' class='form-control quantity-input' value='0'>");
@@ -219,6 +236,7 @@
 
             row.append(productCell);
             row.append(quantityCell);
+            row.append(unitCell);
             row.append(removeCell);
 
             $("#product-table tbody").append(row);
@@ -230,7 +248,8 @@
                 var product = {
                     "id": $(this).find(".product-select").val(),
                     "name": $(this).find(".product-select option:selected").text(),
-                    "quantity": $(this).find(".quantity-input").val()
+                    "quantity": $(this).find(".quantity-input").val(),
+                    "unit": $(this).find(".unit-select option:selected").text(),
                 };
                 products.push(product);
             });
@@ -257,10 +276,10 @@
                
               
                 success: function (response) {
-                    alert(response);
+                    window.location.href = "https://example.com/success-page";
                 },
                 error: function (xhr, status, error) {
-                    console.log(xhr.responseText);
+                    window.location.href = "https://example.com/success-page";
                 },
                 cache: false,
                 processData: false,

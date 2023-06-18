@@ -1,8 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
+from solo.models import SingletonModel
 
 # Create your models here.
+#about page model
 
+
+class About(SingletonModel):
+    texts = RichTextField()
 #distributor profile
 class User_distributor(models.Model):
     user= models.OneToOneField(User, on_delete=models.CASCADE)
@@ -58,9 +64,11 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
+   
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
+    Unit = models.CharField(null=True, max_length=10)
 
 
 # Apply for distributer form

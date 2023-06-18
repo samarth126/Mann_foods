@@ -8,6 +8,7 @@ admin.site.register(Distributor_Applicants)
 admin.site.register(Blogs)
 admin.site.register(gallery)
 admin.site.register(Ticket)
+admin.site.register(About)
 
 
 

@@ -9,6 +9,8 @@ import json
 from .models import *
 from django.utils import timezone
 from django.contrib.auth.decorators import user_passes_test
+from django.utils.safestring import mark_safe
+
 # Create your views here.
 
 def index(request):
@@ -29,17 +31,35 @@ def products(request, slug=None):
     context={'pros':pros}
     return render(request, 'products.html',context)
 
+
+def product_all(request):
+    # blogs=Blogs.objects.all()
+    pros = Product.objects.all()
+    context = {'pros': pros}
+    return render(request, 'product_list.html', context)
+
 def blogs(request):
     blogs=Blogs.objects.all()
     context={'blogs':blogs}
     return render(request, 'blog.html',context)
 
-
+#about us page 
+def about(request):
+    about_text=About.objects.all()
+   
+    context = {'html': mark_safe(about_text[0].texts)}
+    return render(request, 'about.html',context)
 
 def blog_detail(request):
+    
+    
     return render(request, 'blog-details.html',{})
 
+#success page template
 
+
+def success(request):
+    return render(request,'submit.html')
 
 def distributor_reg(request):
     if request.method == 'POST':
@@ -114,8 +134,11 @@ def distributor_reg(request):
             applicant_transport_info=applicant_transport_info,
             applicant_invesment_capacity=applicant_invesment_capacity
         )
-        applicant.save()
-        print(storage_check, transport_check)
+        try:
+            applicant.save()
+            return redirect('success')
+        except:
+            print(storage_check, transport_check)
     context={}
     return render(request,'reservation.html',context)
 
@@ -245,9 +268,10 @@ def place_order(request):
             pr_id = l['id']
             product = Product.objects.get(id=pr_id)
             quant = l['quantity']
+            item_unit=l['unit']
             OrderItem.objects.create(
-                order=order, product=product, quantity=quant)
-        return HttpResponse("Order Placed Succesfully")
+                order=order, product=product, quantity=quant,Unit=item_unit)
+        return redirect("order")
 
 
 def logoutUser(request):
