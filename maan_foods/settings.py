@@ -25,7 +25,8 @@ SECRET_KEY = "django-insecure-n3n=+8-e$#rg+vx+t%c-2%jr^yu=*&k2eieb@r8$%kz8nru2vz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['16.171.110.253', 'maanfoods.in',
+                 'www.maanfoods.in', '127.0.0.1']
 
 
 # Application definition
@@ -82,16 +83,22 @@ DATABASES = {
     }
 }
 
+
+
 #static config
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'staticfiles'),
 )
 
 # media config
 # Added Manually
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
