@@ -318,7 +318,7 @@ button:focus{
     About
 -------------------------------------------------------------------*/
 
-#rotating_img:hover{
+#rotating_img{
     
             width: auto;
             animation: rotation 10s infinite linear;
@@ -338,11 +338,15 @@ button:focus{
   }
 
 
-
+.about-img{
+ 
+    max-width: 400px;
+    max-height: 600px;
+}
 
 .about-section-box{
 	padding: 70px 0px;
-	background: #ffffff url(../images/about-bg.jpg) no-repeat bottom center;
+	background: #ffffff url(../images/bg23.png) no-repeat bottom center;
 	background-size: cover;
 }
 /* .about-section-box .img-fluid{
@@ -428,14 +432,15 @@ button:focus{
 
 .inner-menu-box{}
 .inner-menu-box .nav-pills .nav-link.active{
-	background: #d65106;
+	background: #c42f59;
 }
 .inner-menu-box .nav-pills .nav-link{
 	font-size: 18px;
 }
 .inner-menu-box .nav-pills .nav-link:hover{
-	background: #d65106;
-	color: #ffffff;
+	/* background: #d65106; */
+	color: #c42f59;
+    border: #010101 2px;
 }
 
 .gallery-single{
@@ -839,6 +844,7 @@ button:focus{
 
 .stuff-box{
 	padding: 70px 0px;
+    background: #ffffff url(../images/bg23.png) no-repeat bottom center;
 }
 
 
@@ -867,7 +873,7 @@ button:focus{
     transition: all 0.5s ease 0s;
 }
 .our-team .pic:after{
-    background: rgba(214,81,6,0.8);
+    background: rgba(245, 226, 215, 0.8);
     top: auto;
     left: auto;
     bottom: -100%;
@@ -1388,8 +1394,14 @@ blockquote {
 	font-size: 30px;
 }
 
+/* testing */
+.about_company p{
+    font-size:medium
 
-
+}
+.modal-content {
+    background: url(../images/bg23.png) center/cover;
+}
 
 
 
