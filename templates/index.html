@@ -2,7 +2,6 @@
 {% load static %}
 
 
-
 {% block content %}
 <!-- Start slides -->
 <div id="slides" class="cover-slides">
@@ -73,15 +72,13 @@
 				</div>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-12">
-				<img id="rotating_img" src="{% static 'images/poha.png' %}" alt="" class="img-fluid">
+				<img id="rotating_img" src="{% static 'images/POHA.png' %}" alt="" class="img-fluid">
 			</div>
 		</div>
 	</div>
 </div>
-<!-- End About -->
 
-<!-- Start QT -->
-<div class="qt-box qt-background">
+<!-- <div class="qt-box qt-background">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 ml-auto mr-auto text-center">
@@ -93,9 +90,7 @@
 		</div>
 	</div>
 </div>
-<!-- End QT -->
 
-<!-- Start Gallery -->
 <div class="gallery-box">
 	<div class="container">
 		<div class="row">
@@ -116,114 +111,9 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 <!-- End Gallery -->
 
-
-
-<!-- jQuery -->
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-Owl Carousel JS
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> --> -->
-
-<!-- End Gallery -->
-<!-- <style>
-	.owl-item > div {
-	  cursor: pointer;
-	  margin: 6% 8%;
-	  transition: margin 0.4s ease;
-	}
-	.owl-item.center > div {
-	  cursor: auto;
-	  margin: 0;
-	}
-	.owl-item:not(.center) > div:hover {
-	  opacity: .75;
-	}
-</style> -->
-<!-- Owl Carousel CSS -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> -->
-
-<!-- Start About -->
-<!-- <div class="gallery-box">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="heading-title text-center">
-					<h2>carousal</h2>
-					<p>what to put here ?</p>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			
-			<div class="col-md-12">
-				<div class="owl-carousel">
-					{% for gall in galls %}
-					<div><img src="{{ gall.gal_img.url }}" alt=""></div>
-					{% endfor %}
-					
-				</div>
-			</div>
-		</div>
-	</div>
-</div> -->
-<!-- End Carousal -->
-<!-- <script>
-	var $owl = $('.owl-carousel');
-
-	$owl.children().each( function( index ) {
-		$(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
-	});
-
-	$owl.owlCarousel({
-		center: true,
-		loop: true,
-		items: 5,
-	});
-
-	$(document).on('click', '.owl-item>div', function() {
-		// see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
-		var $speed = 300;  // in ms
-		$owl.trigger('to.owl.carousel', [$(this).data( 'position' ), $speed] );
-	});
-</script> -->
-
-
-
-
-<!-- Start Categories -->
-<!-- <div class="gallery-box">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="heading-title text-center">
-					<h2>Categories</h2>
-					<p>These are Categories</p>
-				</div>
-			</div>
-		</div>
-		<div class="tz-gallery">
-			<div class="row">
-				{% for ctg in ctgs %}
-				<div class="col-lg-3 col-md-6 special-grid drinks">
-					<a class="lightbox" href="{% url 'products' slug=ctg.id  %}">
-					<div class="gallery-single fix">
-						<img src="{{ ctg.catg_img.url }}" class="img" alt="Image">
-						<div class="why-text">
-							<h4>{{ ctg.category_name }}</h4>
-							<p>Sed id magna vitae eros sagittis euismod.</p>
-							<h5> $7.79</h5>
-						</div>
-					</div>
-					</a>
-				</div>
-				{% endfor %}
-			</div>
-		</div>
-	</div>
-</div> -->
 <!-- End Categories -->
 
 	<div class="menu-box">
@@ -241,13 +131,18 @@ Owl Carousel JS
 				<div class="col-3">
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 						<a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
-							aria-controls="v-pills-home" aria-selected="true">POHA</a>
+							aria-controls="v-pills-home" aria-selected="true">Poha</a>
 						<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
-							aria-controls="v-pills-profile" aria-selected="false">NAMKEEN</a>
+							aria-controls="v-pills-profile" aria-selected="false">Dalia</a>
 						<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
-							aria-controls="v-pills-messages" aria-selected="false">READY TO EAT</< /a>
+							aria-controls="v-pills-messages" aria-selected="false">Sabudana </a>
 							<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
-								role="tab" aria-controls="v-pills-settings" aria-selected="false">DESSERTS</a>
+								role="tab" aria-controls="v-pills-settings" aria-selected="false">Suji (rawa)</a>
+								<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
+									aria-controls="v-pills-settings" aria-selected="false">Ready to eat poha Upma</a>
+
+						<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
+							aria-controls="v-pills-settings" aria-selected="false">Gulab jamun pre mix</a>
 					</div>
 				</div>
 	
@@ -404,6 +299,14 @@ Owl Carousel JS
 			</div>
 	
 		</div>
+	</div>
+
+	<div id="rajwad_img">
+		
+			
+		<img style=" max-height: 600px; width: 100%;"src="{% static 'images/rajwada.jpg' %}" class="img-fluid" alt="Image">
+	
+
 	</div>
 
 <!-- Start Customer Reviews -->

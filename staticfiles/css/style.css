@@ -860,7 +860,8 @@ button:focus{
     overflow: hidden;
     position: relative;
 }
-.our-team .pic:before,
+
+/* .our-team .pic:before,
 .our-team .pic:after{
     content: "";
     width: 200%;
@@ -871,14 +872,14 @@ button:focus{
     left: -4%;
     transform: rotate(45deg);
     transition: all 0.5s ease 0s;
-}
-.our-team .pic:after{
+} */
+/* .our-team .pic:after{
     background: rgba(245, 226, 215, 0.8);
     top: auto;
     left: auto;
     bottom: -100%;
     right: -4%;
-}
+} */
 .our-team:hover .pic:before{ top: 0; }
 .our-team:hover .pic:after{ bottom: 0; }
 .our-team .pic img{
@@ -910,7 +911,7 @@ button:focus{
     position: relative;
     transition: all 0.3s ease 0s;
 }
-.our-team .social li a:after{
+/* .our-team .social li a:after{
     content: "";
     width: 100%;
     height: 100%;
@@ -921,7 +922,7 @@ button:focus{
     left: 0;
     z-index: -1;
     transition: all 0.3s ease 0s;
-}
+} */
 .our-team .social li a:hover:after{ transform: rotate(180deg); }
 .our-team .team-content{ padding: 20px; }
 .our-team .title{
@@ -1403,8 +1404,28 @@ blockquote {
     background: url(../images/bg23.png) center/cover;
 }
 
-
-
+.categorey_page{
+    
+    background-color: #FAD14F;
+    padding-top: 20px;
+}
+.mycat{
+    
+    
+            text-align: center;
+            transition: all 0.5s ease 0s;
+            margin-bottom: 30px;
+            display: inline;
+}
+.mycat .pic img {
+    
+    width: 100%;
+    height: auto;
+    display: inline;
+}
+.mycat:hover {
+    box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
 
 
 
