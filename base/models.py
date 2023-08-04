@@ -9,6 +9,10 @@ from solo.models import SingletonModel
 
 class About(SingletonModel):
     texts = RichTextField()
+    
+
+class Offers(SingletonModel):
+    offer_text = RichTextField()
 #distributor profile
 class User_distributor(models.Model):
     user= models.OneToOneField(User, on_delete=models.CASCADE)
