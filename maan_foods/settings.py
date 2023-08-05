@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-n3n=+8-e$#rg+vx+t%c-2%jr^yu=*&k2eieb@r8$%kz8nru2vz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['16.171.110.253', 'maanfoods.in',
+ALLOWED_HOSTS = ['13.51.161.157', '16.171.110.253', 'maanfoods.in',
                  'www.maanfoods.in', '127.0.0.1']
 
 
