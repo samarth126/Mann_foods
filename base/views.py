@@ -12,23 +12,29 @@ from django.contrib.auth.decorators import user_passes_test
 from django.utils.safestring import mark_safe
 
 # Create your views here.
-
+def offers():
+    offer = Offers.objects.all()
+    offers = mark_safe(offer[0].offer_text)
+    return offers
 def index(request):
     ctgs=categorie.objects.all()
     galls=gallery.objects.all()
     print(ctgs)
+    
     context={'ctgs':ctgs,'galls':galls}
     return render(request, 'index.html',context)
 
 def categories(request):
     ctgs=categorie.objects.all()
     context={'ctgs':ctgs}
+  
     return render(request, 'categories.html',context)
 
 def products(request, slug=None):
     # blogs=Blogs.objects.all()
     pros=Product.objects.filter(categorie_prod=slug)
     context={'pros':pros}
+   
     return render(request, 'products.html',context)
 
 
@@ -36,22 +42,25 @@ def product_all(request):
     # blogs=Blogs.objects.all()
     pros = Product.objects.all()
     context = {'pros': pros}
+
     return render(request, 'product_list.html', context)
 
 def blogs(request):
     blogs=Blogs.objects.all()
     context={'blogs':blogs}
+    
     return render(request, 'blog.html',context)
 
 #about us page 
 def about(request):
+   
     about_text=About.objects.all()
    
     context = {'html': mark_safe(about_text[0].texts)}
     return render(request, 'about.html',context)
 
 def blog_detail(request):
-    
+     
     
     return render(request, 'blog-details.html',{})
 
@@ -59,9 +68,11 @@ def blog_detail(request):
 
 
 def success(request):
+     
     return render(request,'submit.html')
 
 def distributor_reg(request):
+     
     if request.method == 'POST':
         # Desired area for agency
         applicant_state_name = request.POST['applicant_state_name']
@@ -172,6 +183,7 @@ def signup_distributor(request):
 
 
 def login_distributor(request):
+     
     if request.user.is_authenticated:
         return redirect('order')
     if request.method == 'POST':
@@ -189,6 +201,7 @@ def login_distributor(request):
 
 
 def order(request):
+     
     if request.user.is_authenticated:
         distri= request.user.user_distributor
         orders=Order.objects.filter(distributor_name=distri).order_by('-order_date')

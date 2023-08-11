@@ -217,7 +217,7 @@ button:focus{
 -------------------------------------------------------------------*/
 
 .cover-slides{
-	height: 100vh;
+    height: 100vh;
 }
 .slides-navigation a {
 	background: #d65106;
@@ -288,12 +288,12 @@ button:focus{
 
 .overlay-background {
     /* background: #333; */
-    position: absolute;
+    /* position: absolute;
     height: 100%;
     width: 100%;
     left: 0;
     top: 0;
-	opacity: 0.5;
+	opacity: 0.5; */
 }
 
 .cover-slides h1{
@@ -320,7 +320,7 @@ button:focus{
 
 #rotating_img{
     
-            width: auto;
+           
             animation: rotation 10s infinite linear;
           
        
@@ -345,7 +345,7 @@ button:focus{
 }
 
 .about-section-box{
-	padding: 70px 0px;
+	
 	background: #ffffff url(../images/bg23.png) no-repeat bottom center;
 	background-size: cover;
 }
@@ -729,8 +729,11 @@ button:focus{
     text-align: center;
     padding: 5px 0;
 }
-.quick-links{
+.quick-links a{
     color: #fff;
+}
+.quick-links a:hover{
+    color: #ffcc00;
 }
 
 .subscribe_form .form_input {
@@ -1406,7 +1409,7 @@ blockquote {
 
 .categorey_page{
     
-    background-color: #FAD14F;
+    background-color: #ffcc00;
     padding-top: 20px;
 }
 .mycat{

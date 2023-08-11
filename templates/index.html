@@ -7,7 +7,7 @@
 <div id="slides" class="cover-slides">
 	<ul class="slides-container">
 		<li class="text-left">
-			<img src="{% static 'images/banner_1.png' %}" alt="">
+			<img class="img-fluid" src="{% static 'images/banner_1.png' %}" alt="" >
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -20,7 +20,7 @@
 			</div>
 		</li>
 		<li class="text-left">
-			<img src="{% static 'images/banner_2.png' %}" alt="">
+			<img class="img-fluid" src="{% static 'images/banner_2.png' %}" alt="" >
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -71,7 +71,7 @@
 					<a class="btn btn-lg btn-circle btn-outline-new-white" href="distributor_reg">Become a Distributor</a>
 				</div>
 			</div>
-			<div class="col-lg-6 col-md-6 col-sm-12">
+			<div class="col-lg-6 col-md-6 col-sm-12 text-center">
 				<img id="rotating_img" src="{% static 'images/rotating.png' %}" alt="" class="img-fluid">
 			</div>
 		</div>
@@ -273,6 +273,47 @@
 	
 
 	</div>
+
+	
+	<div class="categorey_page">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Product Range</h2>
+						<p>Please select the categorey of products you are looking for</p>
+					</div>
+				</div>
+			</div>
+	
+			<div class="row">
+				{% for ctg in ctgs %}
+				<div class="col-md-4 col-sm-6">
+	
+	
+					<div class="mycat">
+						<div class="team-content">
+							<h3 style="color: black;" class="title">{{ ctg.category_name }}</h3>
+	
+						</div>
+						<a class="" href="{% url 'products' slug=ctg.id  %}">
+							<div class="pic categorypage">
+								<img style="max-width: 500px; max-height:100%;" src="{{ ctg.catg_img.url }}">
+							</div>
+	
+						</a>
+	
+						<!-- <button class="btn btn-success" type="button">Explore</button> -->
+	
+					</div>
+	
+				</div>
+				{% endfor %}
+	
+			</div>
+		</div>
+	</div>
+
 
 <!-- Start Customer Reviews -->
 	<div class="customer-reviews-box">
