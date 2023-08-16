@@ -217,7 +217,13 @@ button:focus{
 -------------------------------------------------------------------*/
 
 .cover-slides{
-    height: 100vh;
+  height: 600px;
+position: relative;
+width: auto;
+}
+.cover-slides img {
+    max-width: 100%;
+        height: auto;
 }
 .slides-navigation a {
 	background: #d65106;
@@ -240,6 +246,7 @@ button:focus{
 	background: #010101;
 }
 .cover-slides .container{
+    padding-top: 60px;
 	height: 100%;
 	position: relative;
 	z-index: 2;
