@@ -441,6 +441,9 @@ width: auto;
 .inner-menu-box .nav-pills .nav-link.active{
 	background: #c42f59;
 }
+.inner-menu-box .nav-pills .nav-link.active:hover{
+	color: #ffffff;
+}
 .inner-menu-box .nav-pills .nav-link{
 	font-size: 18px;
 }
