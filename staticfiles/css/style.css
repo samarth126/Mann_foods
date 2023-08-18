@@ -326,14 +326,24 @@ width: auto;
 -------------------------------------------------------------------*/
 
 #rotating_img{
+   border-radius: 80% !important;
+        /* Make the image circular */
+        object-fit: cover;
     
            
-            animation: rotation 10s infinite linear;
+            /* animation: rotation 10s infinite linear; */
+           
+          
+           
+            /* This makes the element circular */
+            
           
        
     
       
 }
+
+
   @keyframes rotation {
       from {
           transform: rotate(0deg);
@@ -352,7 +362,7 @@ width: auto;
 }
 
 .about-section-box{
-	
+	margin-top: 60px;
 	background: #ffffff url(../images/bg23.png) no-repeat bottom center;
 	background-size: cover;
 }
