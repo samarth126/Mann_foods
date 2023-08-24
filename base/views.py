@@ -51,7 +51,11 @@ def blogs(request):
     
     return render(request, 'blog.html',context)
 
-#about us page 
+def blog_detail(request, blog_id=None):
+    blog=Blogs.objects.get(id=blog_id)
+    context={'blog':blog}
+    return render(request, 'blog-details.html',context)
+    #about us page 
 def about(request):
    
     about_text=About.objects.all()
@@ -59,10 +63,7 @@ def about(request):
     context = {'html': mark_safe(about_text[0].texts)}
     return render(request, 'about.html',context)
 
-def blog_detail(request):
-     
-    
-    return render(request, 'blog-details.html',{})
+
 
 #success page template
 

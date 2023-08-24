@@ -15,7 +15,15 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 	<meta name="author" content="">
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RM6Q2NJ2V0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
+		gtag('config', 'G-RM6Q2NJ2V0');
+	</script>
 	<!-- Site Icons -->
 	<link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
 	<link rel="apple-touch-icon" href="{% static 'images/logo.png' %}">
@@ -45,7 +53,7 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
 				<a class="navbar-brand" href="{% url 'index' %}">
-					<img src="{% static 'images/logo.png' %}" height="70px" width="70px" alt="" />
+					<img id="main_logo" src="{% static 'images/logo.png' %}"  alt="" />
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food"
 					aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">

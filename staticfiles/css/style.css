@@ -326,12 +326,12 @@ width: auto;
 -------------------------------------------------------------------*/
 
 #rotating_img{
-   border-radius: 80% !important;
+  
         /* Make the image circular */
         object-fit: cover;
     
            
-            /* animation: rotation 10s infinite linear; */
+            animation: rotation 10s infinite linear;
            
           
            
@@ -1452,7 +1452,10 @@ blockquote {
 }
 
 
-
+#main_logo{
+    width: 55px;
+    height: auto;
+}
 
 
 

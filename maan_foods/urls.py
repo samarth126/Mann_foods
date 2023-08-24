@@ -18,8 +18,16 @@ from django.contrib import admin
 from django.urls import include,path
 from django.conf import settings
 from django.conf.urls.static import static
+from jet_django.urls import jet_urls
+from django.urls import path, include
+
+admin.site.site_header = 'Maan Foods Administration'
+admin.site.site_title = 'Maan Foods Admin'
+admin.site.index_title = 'Welcome to Maan Foods Admin Panel'
 
 urlpatterns = [
     path("", include("base.urls")),
+    path('jet/', include('jet.urls','jet')),
+    path('jet/dashboard/',include('jet.dashboard.urls','jet-dashboard')),
     path("admin/", admin.site.urls),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT )

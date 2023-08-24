@@ -42,11 +42,10 @@
 							<ul>
 								<li><span>{{ blog.blog_author }}</span></li>
 								<li>|</li>
-								<li><span>27 February 2018</span></li>
+								<li><span>{{blog.blog_posted_at}}</span></li>
 							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
-							<p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. </p>
-							<a class="btn btn-lg btn-circle btn-outline-new-white" href="{% url 'blog_detail' %}">Read More</a>
+							<p>{{blog.blog_text|slice:"600"}}</p>
+							<a class="btn btn-lg btn-circle btn-outline-new-white" href="{% url 'blog_detail' blog_id=blog.id %}">Read More</a>
 						</div>
 					</div>
 				</div>
