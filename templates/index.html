@@ -6,8 +6,9 @@
 <!-- Start slides -->
 <div id="slides" class="cover-slides">
 	<ul class="slides-container">
+		{% for banner in galls %}
 		<li class="text-left">
-			<img class="" src="{% static 'images/bnew.jpg' %}" alt="" >
+			<img class="" src="{{ banner.gal_img.url }}" alt="" >
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -19,20 +20,8 @@
 				</div>
 			</div>
 		</li>
-		<li class="text-left">
-			<img class="" src="{% static 'images/banner_2.jpg' %}" alt="" >
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1 class="m-b-20" style="color: #a30a36;"><strong>Welcome To <br> Maan Foods</strong></h1>
-						<p style="color:#E8C82F" class="m-b-40">Shuddhata ka paryay <br>
-							<span style="color:#a30a36 ;"> with 100% natural ingredients</span>
-						</p>
-						<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="products">Products</a></p>
-					</div>
-				</div>
-			</div>
-		</li>
+		{% endfor %}
+	
 	
 	</ul>
 	<div class="slides-navigation">
