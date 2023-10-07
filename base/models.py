@@ -40,8 +40,7 @@ class Ticket(models.Model):
 class gallery(models.Model):
     gal_img=models.ImageField(upload_to='gall/')
 
-    def __str__(self):
-        return self.gal_img
+   
 
 
 
